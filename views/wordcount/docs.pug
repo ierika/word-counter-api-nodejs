@@ -1,0 +1,23 @@
+extends ../base
+
+block content
+    h3 How to use the API
+    hr
+    p
+        | Just supply the API endpoint with
+        code  url
+        |  and
+        code  word
+        |  parameters.
+        br
+    p
+        code url
+        |  should be a full URL like
+        code  http://virtusize.jp
+    p
+        code word
+        |  parameter can be anything. It can contain a alphabets and numbers.
+    p Your query should look like this.
+    p
+        code= `https://${req.headers.host}/wordcount?url=http://virtusize.jp&word=fit`
+    a.btn.btn-secondary(href="/wordcount?url=http://virtusize.jp&word=fit", target='_blank') Try it!

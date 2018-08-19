@@ -1,0 +1,10 @@
+extends ../base
+
+block content
+    form.mt-5(action="/wordcount", method='get')
+        .form-group
+            input(type="url", name="url", placeholder="Enter URL").form-control-lg
+        .form-group
+            input(type="text", name="word", placeholder="Enter word").form-control-lg
+        .form-group.mt-5.text-center
+            button.btn.btn-primary(type='submit') Count it!

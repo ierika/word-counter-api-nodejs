@@ -1,0 +1,33 @@
+{
+  "name": "word_counter_api_nodejs",
+  "version": "1.0.0",
+  "description": "Counts word occurrences inside a web page source.",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node.js",
+    "javascript",
+    "api"
+  ],
+  "author": "haloerika@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "chalk": "^2.4.1",
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
+    "mongoose": "^5.1.2",
+    "morgan": "^1.9.0",
+    "nodemon": "^1.18.3",
+    "pug": "^2.0.3",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "supertest": "^3.1.0"
+  }
+}
