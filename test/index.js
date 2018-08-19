@@ -30,6 +30,13 @@ describe('Test API', () => {
             .expect(200, done);
     });
 
+    it('should render docs page just fine', done => {
+        request(server)
+            .get('/docs')
+            .expect('Content-Type', 'text/html; charset=utf-8')
+            .expect(200, done);
+    });
+
     it('should return HTTP 400 bad request if no parameters was supplied', done => {
         request(server)
             .get('/wordcount')
@@ -86,4 +93,3 @@ describe('Test API', () => {
             .expect(200, done);
     });
 });
-

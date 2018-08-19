@@ -13,11 +13,7 @@ function jsonResponseOk(word_count) {
     };
 }
 
-function getPageWordCount(url, word, cb) {
-    // Parse page
-
-}
-
+// Check if URL is valid
 function isValidUrl(url) {
     // This pattern is not perfect but it's better than nothing
     const full_url_pattern = /^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/g;
@@ -52,7 +48,7 @@ router.get('/wordcount', (req, res, next) => {
             if (err) return next(err);
 
             if (word_count !== null) {
-                // If it's not older than one day, simply return.
+                // Render to response if record is found
                 res.statusCode = 200;
                 const context = {
                     word: word_count.word,
@@ -61,6 +57,7 @@ router.get('/wordcount', (req, res, next) => {
                 };
                 return res.json(jsonResponseOk(context));
             } else {
+                // Get page source and parse
                 request(url, (error, response, body) => {
                     if (error) return next(error);
 
@@ -71,7 +68,7 @@ router.get('/wordcount', (req, res, next) => {
                         const word_count = matches && matches.length || 0;
 
                         // Save to database
-                        WordCount.create({...req.query, word_count: word_count}, (err, word_count) => {
+                        WordCount.create({...req.query, word_count}, (err, word_count) => {
                             if (err) return next(err);
                             res.statusCode = 200;
                             return res.json(jsonResponseOk(word_count));
