@@ -31,7 +31,7 @@ WordCountSchema.pre('save', function(next) {
     const url = this.url;
     const full_url_pattern = /^http(s)?:\/\/[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/g;
 
-    let match = url.match(full_url_pattern);
+    const match = url.match(full_url_pattern);
 
     if (! match) {
         const err = new Error('URL invalid');
