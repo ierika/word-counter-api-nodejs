@@ -1,6 +1,6 @@
 # Word Counter API
 
-Counts all word occurrence in a web page source. You can visit it [here](https://wordcounterapi-nodejs.herokuapp.com).
+Counts all word occurrence in a web page source. You can visit it [here](https://node-wordcounterapi.herokuapp.com/).
 
 ## How to use
 
