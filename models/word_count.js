@@ -23,7 +23,7 @@ const WordCountSchema = new mongoose.Schema({
 
 
 // Word and page should be unique together
-WordCountSchema.index({ word: 1, url: 1}, { unique: true });
+WordCountSchema.index({ word: 1, url: 1 }, { unique: true });
 
 
 // Make sure the URL will be saved as a full URL
