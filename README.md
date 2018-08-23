@@ -21,6 +21,11 @@ Counts all word occurrence in a web page source. You can visit it [here](https:/
     $ cd /path/to/repo
     $ npm install
     ```
+1. Set up environment variables.
+    - MONGODB_URI - the URI for the MongoDB instance
+    - PORT - For Node.js projects, port `3000` is commonly used.
+    - DEBUG - set to `true` if on local environment
+    
 5. Install `nodemon` globally if you haven't yet.
     ```bash
     $ npm install nodemon -g
